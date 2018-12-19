@@ -1,0 +1,5 @@
+#!/bin/sh
+
+## Legacy File -- No Longer Used
+
+/usr/local/bin/php /u01/www/wwdt.me/_scripts/genGraphs.php > /u01/www/wwdt.me/_scripts/genGraphs.log 2>&1

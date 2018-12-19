@@ -1,0 +1,9 @@
+# Ignore any files that potentially have authentication information and
+# have a corresponding cleaned dist file
+_content/Search.html
+_includes/Templates/Header.php
+_includes/WWDTM/Config.php
+s/r.php
+
+# Ignore any composer packages that are installed in vendor/
+vendor/
