@@ -104,7 +104,8 @@ namespace WWDTM {
 					}
 				}
 			} else {
-				if ($showData->Scorekeeper == SHOW_SCOREKEEPERID_BILL_KURTIS and !is_null($scorekeeperDescription)) {
+				//if ($showData->Scorekeeper == SHOW_SCOREKEEPERID_BILL_KURTIS and !is_null($scorekeeperDescription)) {
+				if (!is_null($scorekeeperDescription)) {
 					print "<span class=\"gsk\">&quot;$scorekeeperDescription&quot; $scorekeeperName</span> <a href=\"$scorekeeperURL\">&rarr;</a>";
 				} else {
 					print "<span class=\"gsk\">$scorekeeperName</span>&nbsp;<a href=\"$scorekeeperURL\">&rarr;</a>";
