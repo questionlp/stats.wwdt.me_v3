@@ -1,4 +1,7 @@
 <?php
+# Copyright (c) 2007-2020 Linh Pham
+# wwdt.me_v3 is relased under the terms of the Apache License 2.0
+
 namespace WWDTM {
 	/* Require PEAR::MDB2 */
 	require_once 'MDB2.php';
@@ -30,13 +33,13 @@ namespace WWDTM {
 		private $dbUri;
 		private $dbOption;
 		private $dbConnection;
-	   
+
 		/* Declare Public Properties and Cached Data Arrays */
 		public $Shows = array();
 		public $Locations = array();
 		public $MinYear;
 		public $MaxYear;
-	   
+
 		function __construct() {
 			$this->dbUri = DB_TYPE . '://' . DB_USERNAME . ':' . DB_PASSWORD . '@' . DB_SERVER . '/' . DB_NAME;
 			$this->dbOption = array('portability' => MDB2_PORTABILITY_ALL);
@@ -51,14 +54,14 @@ namespace WWDTM {
 			$this->buildShowsCache();
 			$this->buildLocationsCache();
 		}
-	   
+
 		private function getMinMaxYears() {
 			$this->dbConnection = MDB2::singleton();
 			$res = $this->dbConnection->query('select min(year(showdate)) as min, max(year(showdate)) as max from ww_shows');
 			$row = $res->fetchRow(MDB2_FETCHMODE_ASSOC);
 			return $row;
 		}
-	   
+
 		private function buildShowsCache() {
 			$this->dbConnection = MDB2::singleton();
 			$res = $this->dbConnection->query('select showid, showdate from ww_shows');
@@ -67,7 +70,7 @@ namespace WWDTM {
 				$this->Shows[$showID] = $row[1];
 			}
 		}
-	   
+
 		private function buildLocationsCache() {
 			$this->dbConnection = MDB2::singleton();
 			$res = $this->dbConnection->query('select locationid, city, state, venue from ww_locations');
@@ -85,11 +88,11 @@ namespace WWDTM {
 		public function showExists($showDate) {
 			return in_array($showDate, $this->Shows);
 		}
-	   
+
 		public function getShowID($showDate) {
 			return array_search($showDate, $this->Shows);
 		}
-	   
+
 		public function getRecentShowIDs($desc = true) {
 			$order = '';
 			if ($desc) {
@@ -110,7 +113,7 @@ namespace WWDTM {
 			}
 			return $data;
 		}
-	   
+
 		public function getShowYears($desc = false) {
 			$order = '';
 			if ($desc) {
@@ -129,7 +132,7 @@ namespace WWDTM {
 			}
 			return $years;
 		}
-	   
+
 		public function getShowIDsByYear($year, $desc = false) {
 			$order = '';
 			if ($desc) {
@@ -149,7 +152,7 @@ namespace WWDTM {
 			}
 			return $data;
 		}
-	   
+
 		public function getShowIDsByMonth($year, $month, $desc = false) {
 			$order = '';
 			if ($desc) {
@@ -170,7 +173,7 @@ namespace WWDTM {
 			}
 			return $data;
 		}
-	   
+
 		public function getShowData($showID) {
 			$show = new Show();
 			$this->dbConnection = MDB2::singleton();

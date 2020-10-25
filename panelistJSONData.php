@@ -1,4 +1,7 @@
 <?php
+# Copyright (c) 2007-2020 Linh Pham
+# wwdt.me_v3 is relased under the terms of the Apache License 2.0
+
 /* Set namespace and pull in required WWDTM objects */
 namespace WWDTM;
 

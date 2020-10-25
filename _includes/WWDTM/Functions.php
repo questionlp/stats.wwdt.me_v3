@@ -1,4 +1,7 @@
 <?php
+# Copyright (c) 2007-2020 Linh Pham
+# wwdt.me_v3 is relased under the terms of the Apache License 2.0
+
 namespace WWDTM {
 	/* Require Slugify */
 	require_once SITE_PATH.'/vendor/autoload.php';
@@ -18,7 +21,7 @@ namespace WWDTM {
 				$date = DateTime::createFromFormat($format, $showDate);
 				return $date && $date->format($format) == $showDate;
 		}
-	 
+
 		public function cleanPanelistName($panelistName) {
 			$replace = array(' ' => '', '\'' => '', '.' => '', ',' => '');
 			return strtr($panelistName, $replace);

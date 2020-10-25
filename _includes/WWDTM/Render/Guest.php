@@ -1,4 +1,7 @@
 <?php
+# Copyright (c) 2007-2020 Linh Pham
+# wwdt.me_v3 is relased under the terms of the Apache License 2.0
+
 namespace WWDTM {
 	/* Require WWDTM Files */
 	require_once __DIR__ . '/../GuestData.php';
@@ -63,7 +66,7 @@ namespace WWDTM {
 				}
 				print '</li>';
 			}
-		   
+
 			print "</ul></td></tr>\n";
 			print "</table></div></div>\n";
 		}
