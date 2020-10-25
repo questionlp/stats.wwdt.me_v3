@@ -1,4 +1,4 @@
-# Wait Wait Don't Tell Me! Stats and Details Site
+# Wait Wait Don't Tell Me! Stats and Details Site, Version 3
 
 ## Status
 
