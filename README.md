@@ -21,6 +21,18 @@ weekly quiz show [Wait Wait... Don't Tell Me!](http://waitwait.npr.org)
 Refer to [INSTALLING.md](INSTALLING.md) for information on how to set up an
 instance of this web application that can be served through Apache 2.x.
 
+## Known Issues
+
+The following are known issues that either impact the functionality with the
+application or extraneous `NOTICE` or `WARNING` messages generated due to
+portions of the code or dependant packages haven't been fully ported to
+PHP 7.x.
+
+- Special characters, including any accented characters, aren't rendered
+  as part of converting string data from the database and running them
+  through `htmlentities()`
+- Uses deprecated or unmaintained packages, including `MDB2` and `silex`
+
 ## Contributing
 
 This project contains legacy code and new contributions generally will
