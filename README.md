@@ -6,6 +6,8 @@ This project contains legacy code and is no longer maintained. It has been
 published for historical reference use and to show the progression of the
 Stats Page over the years.
 
+This repository has been marked as archived and marked as read-only.
+
 ## Overview
 
 PHP-based web application that serves up statistics and details for the NPR
